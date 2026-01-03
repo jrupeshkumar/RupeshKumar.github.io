@@ -1,191 +1,224 @@
 :root {
-  --bg:#0f172a;
-  --text:#ffffff;
-  --glass:rgba(255,255,255,0.08);
-  --border:rgba(255,255,255,0.2);
-  --accent:#38bdf8;
+  --bg: #0f172a;
+  --text: #ffffff;
+  --glass: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.2);
+  --accent: #38bdf8;
 }
 
+/* LIGHT MODE */
 .light {
-  --bg:#f8fafc;
-  --text:#020617;
-  --glass:rgba(0,0,0,0.05);
-  --border:rgba(0,0,0,0.1);
+  --bg: #f8fafc;
+  --text: #020617;
+  --glass: rgba(0, 0, 0, 0.05);
+  --border: rgba(0, 0, 0, 0.1);
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Poppins,sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
 }
 
 body {
-  background:var(--bg);
-  color:var(--text);
-  transition:.4s;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s ease;
 }
 
-.section {
-  padding:80px 10%;
-}
-
-.glass {
-  background:var(--glass);
-  backdrop-filter:blur(14px);
-  border:1px solid var(--border);
-  border-radius:20px;
-  margin-bottom:40px;
-}
-
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
-  position:sticky;
-  top:15px;
-  z-index:100;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 10%;
+  position: sticky;
+  top: 15px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
 }
 
 .nav-links {
-  display:flex;
-  gap:20px;
-  list-style:none;
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
 .nav-links a {
-  color:var(--text);
-  text-decoration:none;
+  color: var(--text);
+  text-decoration: none;
 }
 
 .resume-btn {
-  border:1px solid var(--accent);
-  padding:6px 14px;
-  border-radius:20px;
-  color:var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: var(--accent);
 }
 
 .theme-toggle {
-  background:var(--glass);
-  border:none;
-  border-radius:50%;
-  padding:8px 12px;
-  cursor:pointer;
+  background: var(--glass);
+  border: none;
+  border-radius: 50%;
+  padding: 8px 12px;
+  cursor: pointer;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
-  position:relative;
-  text-align:center;
-  padding:120px 10%;
-  background:url("hero-bg-v2.jpg") center/cover no-repeat;
+  position: relative;
+  text-align: center;
+  padding: 120px 10%;
+  background: url("hero-bg-v2.jpg") center / cover no-repeat;
 }
 
 .hero-overlay {
-  position:absolute;
-  inset:0;
-  background:rgba(2,6,23,.75);
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
 }
 
 .hero * {
-  position:relative;
-  z-index:1;
+  position: relative;
+  z-index: 1;
 }
 
 .profile-pic {
-  width:160px;
-  height:160px;
-  border-radius:50%;
-  border:4px solid var(--accent);
-  margin-bottom:20px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  margin-bottom: 20px;
 }
 
 .subtitle {
-  min-height:28px;
-  color:var(--accent);
+  min-height: 28px;
+  color: var(--accent);
 }
 
-/* SKILLS */
+/* ================= SECTIONS ================= */
+.section {
+  padding: 80px 10%;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+/* ================= SKILLS ================= */
 .grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
 }
 
 .skill-item {
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:16px;
-  background:var(--glass);
-  border-radius:15px;
-  transition:.3s;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: var(--glass);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item i {
-  font-size:1.8rem;
+  font-size: 1.8rem;
+}
+
+.skill-item span {
+  font-weight: 500;
 }
 
 .skill-item:hover {
-  transform:translateY(-6px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
 }
 
-/* SKILL COLORS */
-.python i{color:#3776AB;}
-.sql i{color:#00618A;}
-.powerbi i{color:#F2C811;}
-.git i{color:#F05032;}
-.html i{color:#E34F26;}
-.css i{color:#1572B6;}
-.js i{color:#F7DF1E;}
+/* ===== SKILL COLORS (PER TECHNOLOGY) ===== */
+.python i {
+  color: #3776ab;
+}
 
-/* TIMELINE */
+.sql i {
+  color: #00618a;
+}
+
+.powerbi i {
+  color: #f2c811;
+}
+
+.blockchain i {
+  color: #f7931a;
+  text-shadow: 0 0 8px rgba(247, 147, 26, 0.6);
+}
+
+.html i {
+  color: #e34f26;
+}
+
+.css i {
+  color: #1572b6;
+}
+
+.js i {
+  color: #f7df1e;
+}
+
+/* ================= EXPERIENCE TIMELINE ================= */
 .timeline {
-  position:relative;
-  margin-top:40px;
+  position: relative;
+  margin-top: 40px;
 }
 
 .timeline::after {
-  content:"";
-  position:absolute;
-  left:50%;
-  top:0;
-  width:3px;
-  height:100%;
-  background:var(--accent);
-  transform:translateX(-50%);
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+  transform: translateX(-50%);
 }
 
 .timeline-item {
-  width:50%;
-  padding:20px;
+  width: 50%;
+  padding: 20px;
 }
 
-.timeline-item.left {text-align:right;}
-.timeline-item.right {margin-left:50%;}
+.timeline-item.left {
+  text-align: right;
+}
+
+.timeline-item.right {
+  margin-left: 50%;
+}
 
 .timeline-item .content {
-  background:var(--glass);
-  padding:20px;
-  border-radius:15px;
+  background: var(--glass);
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .timeline-item span {
-  color:var(--accent);
-  font-size:.9rem;
+  color: var(--accent);
+  font-size: 0.9rem;
 }
 
-/* PROJECT */
+/* ================= PROJECT ================= */
 .card {
-  padding:25px;
-  background:var(--glass);
-  border-radius:15px;
+  padding: 25px;
+  background: var(--glass);
+  border-radius: 15px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
-  text-align:center;
-  padding:20px;
+  text-align: center;
+  padding: 20px;
 }
