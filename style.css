@@ -152,9 +152,8 @@ body {
   color: #f2c811;
 }
 
-.blockchain i {
+.skill-item.blockchain i {
   color: #f7931a;
-  text-shadow: 0 0 8px rgba(247, 147, 26, 0.6);
 }
 
 .html i {
@@ -222,3 +221,4 @@ body {
   text-align: center;
   padding: 20px;
 }
+
