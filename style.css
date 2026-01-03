@@ -1,0 +1,140 @@
+:root {
+  --bg: #0f172a;
+  --text: #ffffff;
+  --glass: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.2);
+  --accent: #38bdf8;
+}
+
+.light {
+  --bg: #f8fafc;
+  --text: #020617;
+  --glass: rgba(0,0,0,0.05);
+  --border: rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.4s;
+}
+
+.section {
+  padding: 80px 10%;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.resume-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  color: var(--accent);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: var(--accent);
+}
+
+/* SKILLS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+  gap: 20px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: var(--glass);
+  border-radius: 15px;
+}
+
+.skill-item img {
+  width: 32px;
+}
+
+/* EXPERIENCE */
+.timeline-item {
+  margin-bottom: 25px;
+}
+
+.time {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* PROJECT */
+.card {
+  padding: 25px;
+  border-radius: 15px;
+  background: var(--glass);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 1.4rem;
+  background: var(--glass);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
