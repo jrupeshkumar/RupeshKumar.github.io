@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jinkala Rupesh Kumar | Portfolio</title>
 
+  <!-- FONT AWESOME (MANDATORY) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- SCROLL REVEAL -->
   <script src="https://unpkg.com/scrollreveal"></script>
+
   <link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -14,6 +24,7 @@
 <!-- NAVBAR -->
 <nav class="navbar glass">
   <div class="nav-logo">Rupesh</div>
+
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -21,7 +32,11 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="resume.pdf" download class="resume-btn">Resume</a></li>
   </ul>
-  <button id="themeToggle" class="theme-toggle">🌙</button>
+
+  <!-- THEME TOGGLE (TOP RIGHT) -->
+  <button id="themeToggle" class="theme-toggle">
+    <i class="fa-solid fa-moon"></i>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -29,6 +44,7 @@
   <div class="hero-overlay"></div>
 
   <img src="photo.jpg" class="profile-pic" alt="Rupesh Kumar">
+
   <h1>Jinkala Rupesh Kumar</h1>
 
   <!-- FIXED HEIGHT (NO SHAKE) -->
@@ -44,14 +60,47 @@
   </p>
 </section>
 
-<!-- SKILLS -->
+<!-- SKILLS (FONT AWESOME ONLY) -->
 <section id="skills" class="section glass reveal">
   <h2>Skills</h2>
+
   <div class="grid skills-grid">
-    <div class="skill-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.png"><span>Python</span></div>
-    <div class="skill-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.png"><span>SQL</span></div>
-    <div class="skill-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/powerbi/powerbi-original.png"><span>Power BI</span></div>
-    <div class="skill-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.png"><span>Git & GitHub</span></div>
+
+    <div class="skill-item">
+      <i class="fa-brands fa-python"></i>
+      <span>Python</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fa-solid fa-database"></i>
+      <span>SQL</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fa-solid fa-chart-line"></i>
+      <span>Power BI</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fa-brands fa-git-alt"></i>
+      <span>Git & GitHub</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fa-brands fa-html5"></i>
+      <span>HTML</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fa-brands fa-css3-alt"></i>
+      <span>CSS</span>
+    </div>
+
+    <div class="skill-item">
+      <i class="fa-brands fa-js"></i>
+      <span>JavaScript</span>
+    </div>
+
   </div>
 </section>
 
@@ -89,13 +138,17 @@
 <!-- PROJECTS -->
 <section id="projects" class="section glass reveal">
   <h2>Projects</h2>
+
   <div class="card">
     <h3>KYC Verification System</h3>
     <p>Blockchain-based secure identity verification system.</p>
   </div>
 </section>
 
-<footer class="footer glass">© 2025 Jinkala Rupesh Kumar</footer>
+<!-- FOOTER -->
+<footer class="footer glass">
+  © 2025 Jinkala Rupesh Kumar
+</footer>
 
 <script src="script.js"></script>
 </body>
