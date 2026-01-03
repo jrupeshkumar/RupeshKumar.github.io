@@ -1,146 +1,79 @@
 :root {
-  --bg: #0f172a;
-  --text: #ffffff;
-  --glass: rgba(255,255,255,0.08);
-  --border: rgba(255,255,255,0.2);
-  --accent: #38bdf8;
+  --bg:#0f172a; --text:#fff;
+  --glass:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.2);
+  --accent:#38bdf8;
 }
-
 .light {
-  --bg: #f8fafc;
-  --text: #020617;
-  --glass: rgba(0,0,0,0.05);
-  --border: rgba(0,0,0,0.1);
+  --bg:#f8fafc; --text:#020617;
+  --glass:rgba(0,0,0,0.05);
+  --border:rgba(0,0,0,0.1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Poppins, sans-serif;
-}
+* {margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+body {background:var(--bg);color:var(--text);transition:.4s;}
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  transition: 0.4s;
-}
+.section {padding:80px 10%;}
+.glass {background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:20px;margin-bottom:40px;}
 
-/* NAVBAR */
 .navbar {
-  position: sticky;
-  top: 15px;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 10%;
+  position:sticky;top:15px;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:15px 10%;
 }
 
-.nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
+.nav-links {display:flex;gap:20px;list-style:none;}
+.nav-links a {color:var(--text);text-decoration:none;}
+.resume-btn {border:1px solid var(--accent);padding:6px 14px;border-radius:20px;color:var(--accent);}
 
-.nav-links a {
-  color: var(--text);
-  text-decoration: none;
-}
+.theme-toggle {background:var(--glass);border:none;border-radius:50%;padding:8px 12px;cursor:pointer}
 
-.resume-btn {
-  border: 1px solid var(--accent);
-  padding: 6px 14px;
-  border-radius: 20px;
-  color: var(--accent);
-}
-
-/* THEME TOGGLE */
-.theme-toggle {
-  background: var(--glass);
-  border: none;
-  padding: 8px 12px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-/* HERO */
 .hero {
-  position: relative;
-  text-align: center;
-  padding: 120px 10%;
-  background: url("hero-bg.jpg") center/cover no-repeat;
+  position:relative;text-align:center;
+  padding:120px 10%;
+  background:url("hero-bg.jpg") center/cover no-repeat;
 }
-
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(2,6,23,0.75);
-  backdrop-filter: blur(4px);
+  position:absolute;inset:0;
+  background:rgba(2,6,23,.75);
 }
-
-.hero * {
-  position: relative;
-  z-index: 1;
-}
+.hero * {position:relative;z-index:1;}
 
 .profile-pic {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  border: 4px solid var(--accent);
-  margin-bottom: 20px;
+  width:160px;height:160px;border-radius:50%;
+  border:4px solid var(--accent);margin-bottom:20px;
 }
 
 .subtitle {
-  color: var(--accent);
-}
-
-/* SECTIONS */
-.section {
-  padding: 80px 10%;
-}
-
-.glass {
-  background: var(--glass);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  margin-bottom: 40px;
+  color:var(--accent);
+  min-height:28px;     /* 🔥 FIXED HEIGHT */
+  transition:opacity .3s ease;
 }
 
 /* SKILLS */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
-  gap: 20px;
+.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;}
+.skill-item {display:flex;align-items:center;gap:12px;padding:15px;background:var(--glass);border-radius:15px;}
+.skill-item img {width:32px}
+
+/* TIMELINE */
+.timeline {position:relative;margin-top:40px;}
+.timeline::after {
+  content:"";position:absolute;left:50%;top:0;
+  width:3px;height:100%;background:var(--accent);transform:translateX(-50%);
 }
 
-.skill-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 15px;
-  background: var(--glass);
-  border-radius: 15px;
+.timeline-item {
+  width:50%;padding:20px;position:relative;
+}
+.timeline-item.left {left:0;text-align:right;}
+.timeline-item.right {left:50%;}
+
+.timeline-item .content {
+  background:var(--glass);
+  padding:20px;border-radius:15px;
 }
 
-/* EXPERIENCE */
-.time {
-  color: var(--accent);
-  font-size: 0.9rem;
-}
+.timeline-item span {color:var(--accent);font-size:.9rem;}
 
-/* PROJECT */
-.card {
-  background: var(--glass);
-  padding: 25px;
-  border-radius: 15px;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 20px;
-}
+.card {padding:25px;background:var(--glass);border-radius:15px;}
+.footer {text-align:center;padding:20px;}
