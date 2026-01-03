@@ -1,26 +1,37 @@
-/* THEME */
-const toggle=document.getElementById("themeToggle");
-toggle.onclick=()=>{
+/* THEME TOGGLE */
+const toggle = document.getElementById("themeToggle");
+toggle.onclick = () => {
   document.body.classList.toggle("light");
-  localStorage.setItem("theme",document.body.className);
+  localStorage.setItem("theme", document.body.className);
 };
-if(localStorage.getItem("theme"))document.body.className=localStorage.getItem("theme");
-
-/* TYPING – NO BLINK */
-const roles=["Python Developer","Data Analyst","Blockchain Enthusiast"];
-let i=0,j=0;const el=document.querySelector(".typing");
-
-function type(){
-  if(j<roles[i].length){el.textContent+=roles[i][j++];setTimeout(type,80);}
-  else setTimeout(erase,1500);
+if (localStorage.getItem("theme")) {
+  document.body.className = localStorage.getItem("theme");
 }
-function erase(){
-  if(j>0){el.textContent=roles[i].slice(0,--j);setTimeout(erase,40);}
-  else{i=(i+1)%roles.length;setTimeout(type,400);}
+
+/* TYPING EFFECT (NO SHAKE) */
+const roles = ["Python Developer", "Data Analyst", "Blockchain Enthusiast"];
+let i = 0, j = 0;
+const el = document.querySelector(".typing");
+
+function type() {
+  if (j < roles[i].length) {
+    el.textContent += roles[i][j++];
+    setTimeout(type, 80);
+  } else setTimeout(erase, 1500);
+}
+
+function erase() {
+  if (j > 0) {
+    el.textContent = roles[i].slice(0, --j);
+    setTimeout(erase, 40);
+  } else {
+    i = (i + 1) % roles.length;
+    setTimeout(type, 400);
+  }
 }
 type();
 
-/* SCROLL ANIMATION */
+/* SCROLL REVEAL */
 ScrollReveal({
   distance:"50px",
   duration:1000,
