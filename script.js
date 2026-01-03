@@ -33,3 +33,14 @@ function erase() {
   }
 }
 type();
+
+/* SCROLL REVEAL */
+ScrollReveal({
+  distance: "50px",
+  duration: 1000,
+  easing: "ease-out",
+  reset: false
+});
+
+ScrollReveal().reveal(".hero img, .hero h1, .hero p", { origin: "top", interval: 150 });
+ScrollReveal().reveal(".reveal", { origin: "bottom", interval: 200 });
