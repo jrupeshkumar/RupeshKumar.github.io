@@ -26,24 +26,14 @@ body {
   transition: 0.4s;
 }
 
-.section {
-  padding: 80px 10%;
-}
-
-.glass {
-  background: var(--glass);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  margin-bottom: 40px;
-}
-
 /* NAVBAR */
 .navbar {
   position: sticky;
-  top: 20px;
+  top: 15px;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 10%;
 }
 
@@ -54,20 +44,45 @@ body {
 }
 
 .nav-links a {
-  text-decoration: none;
   color: var(--text);
+  text-decoration: none;
 }
 
 .resume-btn {
-  padding: 6px 14px;
   border: 1px solid var(--accent);
+  padding: 6px 14px;
   border-radius: 20px;
   color: var(--accent);
 }
 
+/* THEME TOGGLE */
+.theme-toggle {
+  background: var(--glass);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
 /* HERO */
 .hero {
+  position: relative;
   text-align: center;
+  padding: 120px 10%;
+  background: url("hero-bg.jpg") center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2,6,23,0.75);
+  backdrop-filter: blur(4px);
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
 }
 
 .profile-pic {
@@ -79,8 +94,20 @@ body {
 }
 
 .subtitle {
-  margin-top: 10px;
   color: var(--accent);
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 10%;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  margin-bottom: 40px;
 }
 
 /* SKILLS */
@@ -99,42 +126,21 @@ body {
   border-radius: 15px;
 }
 
-.skill-item img {
-  width: 32px;
-}
-
 /* EXPERIENCE */
-.timeline-item {
-  margin-bottom: 25px;
-}
-
 .time {
-  font-size: 0.9rem;
   color: var(--accent);
+  font-size: 0.9rem;
 }
 
 /* PROJECT */
 .card {
+  background: var(--glass);
   padding: 25px;
   border-radius: 15px;
-  background: var(--glass);
 }
 
 /* FOOTER */
 .footer {
   text-align: center;
   padding: 20px;
-}
-
-/* THEME TOGGLE */
-.theme-toggle {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  font-size: 1.4rem;
-  background: var(--glass);
-  border: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  cursor: pointer;
 }
