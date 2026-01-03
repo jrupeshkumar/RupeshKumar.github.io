@@ -1,46 +1,33 @@
-/* THEME TOGGLE */
-const toggle = document.getElementById("themeToggle");
-toggle.onclick = () => {
+/* THEME */
+const toggle=document.getElementById("themeToggle");
+toggle.onclick=()=>{
   document.body.classList.toggle("light");
-  localStorage.setItem("theme", document.body.className);
+  localStorage.setItem("theme",document.body.className);
 };
+if(localStorage.getItem("theme"))document.body.className=localStorage.getItem("theme");
 
-if (localStorage.getItem("theme")) {
-  document.body.className = localStorage.getItem("theme");
+/* TYPING – NO BLINK */
+const roles=["Python Developer","Data Analyst","Blockchain Enthusiast"];
+let i=0,j=0;const el=document.querySelector(".typing");
+
+function type(){
+  if(j<roles[i].length){el.textContent+=roles[i][j++];setTimeout(type,80);}
+  else setTimeout(erase,1500);
 }
-
-/* TYPING EFFECT */
-const roles = ["Python Developer", "Data Analyst", "Blockchain Enthusiast"];
-let i = 0, j = 0;
-const typing = document.querySelector(".typing");
-
-function type() {
-  if (j < roles[i].length) {
-    typing.textContent += roles[i][j++];
-    setTimeout(type, 100);
-  } else {
-    setTimeout(erase, 1500);
-  }
-}
-
-function erase() {
-  if (j > 0) {
-    typing.textContent = roles[i].substring(0, --j);
-    setTimeout(erase, 50);
-  } else {
-    i = (i + 1) % roles.length;
-    setTimeout(type, 500);
-  }
+function erase(){
+  if(j>0){el.textContent=roles[i].slice(0,--j);setTimeout(erase,40);}
+  else{i=(i+1)%roles.length;setTimeout(type,400);}
 }
 type();
 
-/* SCROLL REVEAL */
+/* SCROLL ANIMATION */
 ScrollReveal({
-  distance: "50px",
-  duration: 1000,
-  easing: "ease-out",
-  reset: false
+  distance:"50px",
+  duration:1000,
+  easing:"ease-out",
+  reset:false
 });
 
-ScrollReveal().reveal(".hero img, .hero h1, .hero p", { origin: "top", interval: 150 });
-ScrollReveal().reveal(".reveal", { origin: "bottom", interval: 200 });
+ScrollReveal().reveal(".reveal",{origin:"bottom",interval:150});
+ScrollReveal().reveal(".timeline-item.left",{origin:"left"});
+ScrollReveal().reveal(".timeline-item.right",{origin:"right"});
