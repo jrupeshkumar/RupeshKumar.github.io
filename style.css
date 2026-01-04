@@ -39,15 +39,14 @@ body {
 
 .nav-links {
   display:flex;
-  gap:20px;
   list-style:none;
+  gap:20px;
 }
 
 .nav-links a {
   color:var(--text);
   text-decoration:none;
   position:relative;
-  padding:4px 2px;
 }
 
 /* ACTIVE NAV */
@@ -59,11 +58,11 @@ body {
   content:"";
   position:absolute;
   left:0;
-  bottom:-4px;
+  bottom:-6px;
   width:100%;
   height:2px;
   background:var(--accent);
-  border-radius:4px;
+  border-radius:2px;
 }
 
 .nav-actions {
@@ -120,7 +119,7 @@ body {
 }
 
 .animated-profile {
-  animation: float 4s ease-in-out infinite;
+  animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -171,6 +170,11 @@ body {
   align-items:center;
 }
 
+.skill-item i,
+.certificate-card i {
+  font-size:2rem;
+}
+
 .skill-item:hover,
 .certificate-card:hover {
   transform:translateY(-6px);
@@ -186,7 +190,7 @@ body {
 .css i{color:#1572b6;}
 .js i{color:#f7df1e;}
 
-/* TIMELINE */
+/* TIMELINE (FIXED) */
 .timeline {
   position:relative;
   margin-top:40px;
@@ -196,14 +200,20 @@ body {
   content:"";
   position:absolute;
   left:50%;
+  top:0;
   width:3px;
   height:100%;
   background:var(--accent);
+  transform:translateX(-50%);
 }
 
 .timeline-item {
   width:50%;
   padding:20px;
+}
+
+.timeline-item.left {
+  text-align:right;
 }
 
 .timeline-item.right {
@@ -226,7 +236,7 @@ body {
   padding:20px;
 }
 
-/* MOBILE NAV */
+/* MOBILE FIXES */
 @media (max-width:768px) {
   .menu-toggle {display:block;}
 
@@ -245,5 +255,22 @@ body {
 
   .nav-links.active {
     display:flex;
+  }
+
+  /* TIMELINE MOBILE FIX */
+  .timeline::after {
+    left:10px;
+  }
+
+  .timeline-item {
+    width:100%;
+    padding-left:30px;
+    padding-right:0;
+    margin-left:0;
+    text-align:left;
+  }
+
+  .timeline-item.right {
+    margin-left:0;
   }
 }
