@@ -7,9 +7,7 @@
 
   <!-- FONT AWESOME -->
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"/>
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <!-- SCROLL REVEAL -->
   <script src="https://unpkg.com/scrollreveal"></script>
@@ -23,25 +21,31 @@
 <nav class="navbar glass">
   <div class="nav-logo">Rupesh Kumar</div>
 
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certificates">Certificates</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#skills" class="nav-link">Skills</a></li>
+    <li><a href="#experience" class="nav-link">Experience</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#certificates" class="nav-link">Certificates</a></li>
     <li><a href="resume.pdf" download class="resume-btn">Resume</a></li>
   </ul>
 
-  <button id="themeToggle" class="theme-toggle">
-    <i class="fa-solid fa-moon"></i>
-  </button>
+  <div class="nav-actions">
+    <button id="themeToggle" class="theme-toggle">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
-<header class="hero section">
+<header class="hero section" id="hero">
   <div class="hero-overlay"></div>
 
-  <img src="photo.jpg" class="profile-pic" alt="Rupesh Kumar">
+  <img src="photo.jpg" class="profile-pic animated-profile" alt="Rupesh Kumar">
 
   <h1>Jinkala Rupesh Kumar</h1>
   <p class="subtitle typing"></p>
@@ -59,53 +63,28 @@
 <!-- SKILLS -->
 <section id="skills" class="section glass reveal">
   <h2>Skills</h2>
-
-  <div class="grid skills-grid">
-
-    <div class="skill-item python">
-      <i class="fa-brands fa-python"></i><span>Python</span>
-    </div>
-
-    <div class="skill-item sql">
-      <i class="fa-solid fa-database"></i><span>SQL</span>
-    </div>
-
-    <div class="skill-item powerbi">
-      <i class="fa-solid fa-chart-line"></i><span>Power BI</span>
-    </div>
-
-    <div class="skill-item blockchain">
-  <i class="fa-brands fa-bitcoin"></i><span>Blockchain</span>
-    </div>
-
-    <div class="skill-item html">
-      <i class="fa-brands fa-html5"></i><span>HTML</span>
-    </div>
-
-    <div class="skill-item css">
-      <i class="fa-brands fa-css3-alt"></i><span>CSS</span>
-    </div>
-
-    <div class="skill-item js">
-      <i class="fa-brands fa-js"></i><span>JavaScript</span>
-    </div>
-
+  <div class="grid">
+    <div class="skill-item python"><i class="fa-brands fa-python"></i><span>Python</span></div>
+    <div class="skill-item sql"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+    <div class="skill-item powerbi"><i class="fa-solid fa-chart-line"></i><span>Power BI</span></div>
+    <div class="skill-item blockchain"><i class="fa-brands fa-bitcoin"></i><span>Blockchain</span></div>
+    <div class="skill-item html"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+    <div class="skill-item css"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+    <div class="skill-item js"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section glass">
   <h2>Experience</h2>
-
   <div class="timeline">
-
     <div class="timeline-item left reveal">
       <div class="content">
         <h3>Flipkart – Software Intern</h3>
         <span>Apr 2025 – Present</span>
         <ul>
-          <li>Improved system performance by 15%</li>
-          <li>Backend automation and optimization</li>
+          <li>Improved system performance</li>
+          <li>Backend automation</li>
         </ul>
       </div>
     </div>
@@ -115,12 +94,11 @@
         <h3>VCodez – Data Analyst</h3>
         <span>Apr 2023 – Mar 2024</span>
         <ul>
-          <li>Built dashboards and reports</li>
-          <li>Improved data accuracy</li>
+          <li>Dashboards & reporting</li>
+          <li>Data accuracy improvement</li>
         </ul>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -133,32 +111,27 @@
   </div>
 </section>
 
-  <section id="certificates" class="certificates">
-  <h2 class="section-title">Certificates</h2>
-
+<!-- CERTIFICATES -->
+<section id="certificates" class="section glass reveal">
+  <h2>Certificates</h2>
   <div class="certificate-container">
-
     <div class="certificate-card">
       <i class="fa-solid fa-certificate"></i>
       <h3>Blockchain Fundamentals</h3>
       <p>Coursera</p>
     </div>
-
     <div class="certificate-card">
       <i class="fa-solid fa-certificate"></i>
       <h3>Python Programming</h3>
       <p>Udemy</p>
     </div>
-
     <div class="certificate-card">
       <i class="fa-solid fa-certificate"></i>
       <h3>Web Development</h3>
       <p>Internshala</p>
     </div>
-
   </div>
 </section>
-
 
 <footer class="footer glass">
   © 2026 Jinkala Rupesh Kumar
@@ -167,8 +140,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
