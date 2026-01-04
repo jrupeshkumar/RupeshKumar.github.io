@@ -11,19 +11,21 @@ if (localStorage.getItem("theme")) {
 /* MOBILE MENU */
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
+const navLinkItems = document.querySelectorAll(".nav-link");
 
 menuToggle.onclick = () => {
   navLinks.classList.toggle("active");
 };
 
 /* CLOSE MENU ON CLICK */
-document.querySelectorAll(".nav-link").forEach(link => {
-  link.onclick = () => navLinks.classList.remove("active");
+navLinkItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
 });
 
 /* ACTIVE NAV ON SCROLL */
 const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll", () => {
   let current = "";
@@ -35,7 +37,7 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  navItems.forEach(link => {
+  navLinkItems.forEach(link => {
     link.classList.remove("active");
     if (link.getAttribute("href") === `#${current}`) {
       link.classList.add("active");
